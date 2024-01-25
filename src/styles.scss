@@ -1,1 +1,243 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+* {
+  font-family: "Inter";
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+div {
+  box-sizing: border-box;
+}
+button {
+  outline: none;
+  border: none;
+}
+
+.defaultCtaBtn {
+  width: 100%;
+  padding: 15px !important;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--color-text) !important;
+  color: var(--color-background) !important;
+  border-radius: 7px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Dark & Light mode                             */
+/* -------------------------------------------------------------------------- */
+:root {
+  /* Light Theme Variables */
+  --color-text-light: black;
+  --color-text-light-soft: #717171;
+  --color-filter-light: invert();
+  --color-background-light: white;
+  --color-background-light-transparent: rgba(255, 255, 255, 0.5);
+  --color-background-light-transparent-invert: rgba(64, 64, 64, 0.5);
+  --color-background-light-soft: #f6f2f2;
+  --color-background-light-contrast-200: #ebe9e9;
+  --color-background-light-contrast-300: #c4c4c4;
+  --color-background-light-footer: #eef0f2;
+
+  /* Dark Theme Variables */
+  --color-text-dark: white;
+  --color-text-dark-soft: #f6f2f2;
+  --color-filter-dark: none;
+  --color-background-dark: #404040;
+  --color-background-dark-transparent: rgba(64, 64, 64, 0.5);
+  --color-background-dark-transparent-invert: rgba(255, 255, 255, 0.5);
+  --color-background-dark-soft: #333333;
+  --color-background-dark-contrast-200: #232323;
+  --color-background-dark-contrast-300: #121212;
+  --color-background-dark-footer: #110f0d;
+
+  /* colors */
+  --color-pink-light: #129bed;
+  --color-green-light: #97f06c;
+  --color-blue-light: #f2a20d;
+}
+
+.light-theme {
+  --color-text: var(--color-text-light);
+  --color-text-soft: var(--color-text-light-soft);
+  --color-filter: var(--color-filter-light);
+  --color-background: var(--color-background-light);
+  --color-background-transparent: var(--color-background-light-transparent);
+  --color-background-transparent-invert: var(
+    --color-background-light-transparent-invert
+  );
+  --color-background-soft: var(--color-background-light-soft);
+  --color-background-contrast-200: var(--color-background-light-contrast-200);
+  --color-background-contrast-300: var(--color-background-light-contrast-300);
+  --color-background-footer: var(--color-background-light-footer);
+}
+
+.dark-theme {
+  --color-text: var(--color-text-dark);
+  --color-text-soft: var(--color-text-dark-soft);
+  --color-filter: var(--color-filter-dark);
+  --color-background: var(--color-background-dark);
+  --color-background-transparent: var(--color-background-dark-transparent);
+  --color-background-transparent-invert: var(
+    --color-background-dark-transparent-invert
+  );
+  --color-background-soft: var(--color-background-dark-soft);
+  --color-background-contrast-200: var(--color-background-dark-contrast-200);
+  --color-background-contrast-300: var(--color-background-dark-contrast-300);
+  --color-background-footer: var(--color-background-dark-footer);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                     fim                                    */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                               Helpers Classes                              */
+/* -------------------------------------------------------------------------- */
+
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-1 {
+  flex: 1;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+.justify-content-start {
+  justify-content: flex-start;
+}
+@for $i from 1 through 100 {
+  .w-#{$i} {
+    width: $i * 1%;
+  }
+  .h-#{$i} {
+    height: $i * 1%;
+  }
+  .gap-#{$i} {
+    gap: $i * 1px;
+  }
+}
+@for $i from 1 through 100 {
+  .br-#{$i} {
+    border-radius: $i * 1px;
+  }
+}
+.w-fc {
+  width: fit-content;
+}
+
+.h-fc {
+  height: fit-content;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+.mt-auto {
+  margin-top: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+@for $i from 1 through 20 {
+  /* padding */
+  .px-#{$i} {
+    padding-left: $i * 0.25rem;
+    padding-right: $i * 0.25rem;
+  }
+
+  .py-#{$i} {
+    padding-top: $i * 0.25rem;
+    padding-bottom: $i * 0.25rem;
+  }
+  .pl-#{$i} {
+    padding-left: $i * 0.25rem;
+  }
+  .pr-#{$i} {
+    padding-right: $i * 0.25rem;
+  }
+  .pt-#{$i} {
+    padding-top: $i * 0.25rem;
+  }
+  .pb-#{$i} {
+    padding-bottom: $i * 0.25rem;
+  }
+
+  /* margin */
+  .mx-#{$i} {
+    margin-left: $i * 0.25rem;
+    margin-right: $i * 0.25rem;
+  }
+
+  .my-#{$i} {
+    margin-top: $i * 0.25rem;
+    margin-bottom: $i * 0.25rem;
+  }
+  .ml-#{$i} {
+    margin-left: $i * 0.25rem;
+  }
+  .mr-#{$i} {
+    margin-right: $i * 0.25rem;
+  }
+  .mt-#{$i} {
+    margin-top: $i * 0.25rem;
+  }
+  .mb-#{$i} {
+    margin-bottom: $i * 0.25rem;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                     fim                                    */
+/* -------------------------------------------------------------------------- */
+span.mdc-evolution-chip__cell.mdc-evolution-chip__cell--primary {
+  justify-content: center;
+}
